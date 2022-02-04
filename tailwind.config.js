@@ -11,6 +11,7 @@ module.exports = {
       "./*.js",
       "./**/*.ts",
       "./*.ts",
+      "./assets/js/main.js",
     ],
     options: {
       safelist: [],
@@ -21,6 +22,10 @@ module.exports = {
       ...colors,
     },
     extend: {
+      colors: {
+        "theme-color": "#361CC1",
+        "theme-color-2": "#FE7A7B",
+      },
       minHeight: {
         "screen-75": "75vh",
       },
@@ -30,11 +35,15 @@ module.exports = {
       opacity: {
         80: ".8",
       },
+      padding: {
+        120: "120px",
+      },
       zIndex: {
         2: 2,
         3: 3,
       },
       inset: {
+        100: "100%",
         "-100": "-100%",
         "-225-px": "-225px",
         "-160-px": "-160px",

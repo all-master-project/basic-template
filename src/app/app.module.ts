@@ -8,6 +8,7 @@ import { ModulesCrudModule } from './admin/modules-crud/modules-crud.module';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HomeModule } from './home/home.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -19,6 +20,7 @@ import { AppComponent } from './app.component';
     AdminHomeModule,
     AdminModule,
     DashboardModule,
+    HomeModule,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],

@@ -23,13 +23,35 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "aot": true,
-            "assets": ["src/favicon.ico", "src/assets"],
+            "assets": [
+              "src/favicon.ico",
+              "src/assets",
+              "src/assets/home/images"
+            ],
             "styles": [
               "src/styles.css",
               "node_modules/@fortawesome/fontawesome-free/css/all.min.css",
-              "src/assets/styles/tailwind.css"
+              "src/assets/styles/tailwind.css",
+              "src/assets/home/css/animate.css",
+              "src/assets/home/css/LineIcons.2.0.css",
+              "src/assets/home/css/magnific-popup.css",
+              "src/assets/home/css/slick.css",
+              "src/assets/home/css/tailwind.css",
+              "src/assets/home/src/tailwind.css"
             ],
-            "scripts": ["/src/assets/js/main.js"]
+            "scripts": [
+              "/src/assets/home/js/vendor/jquery-3.5.1-min.js",
+              "/src/assets/home/js/vendor/modernizr-3.7.1.min.js",
+              "/src/assets/home/js/jquery.easing.min.js",
+              "/src/assets/home/js/popper.min.js",
+              "/src/assets/home/js/waypoints.min.js",
+              "/src/assets/home/js/plugins.js",
+              "/src/assets/home/js/slick.min.js",
+              "/src/assets/home/js/scrolling-nav.js",
+              "/src/assets/home/js/particles.min.js",
+              "/src/assets/home/js/main.js",
+              "/src/assets/home/js/wow.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -64,6 +86,7 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
+            "disableHostCheck": true,
             "browserTarget": "cms-app-front-end:build"
           },
           "configurations": {
