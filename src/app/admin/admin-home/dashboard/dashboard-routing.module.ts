@@ -4,12 +4,12 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { IndexComponent } from './components/index/index.component';
 
 const routes: Routes = [
-  {
+  { 
     path: '',
     component: IndexComponent,
     children: [{ path: '', component: DashboardComponent }],
   },
-];
+]; 
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

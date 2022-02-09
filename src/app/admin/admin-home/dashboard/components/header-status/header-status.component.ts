@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'cms-header-status',
+  selector: 'app-header-status',
   templateUrl: './header-status.component.html',
-  styleUrls: ['./header-status.component.css']
 })
 export class HeaderStatusComponent implements OnInit {
 

@@ -9,36 +9,33 @@ import { CardLineChartComponent } from './components/cards/card-line-chart/card-
 import { CardPageVisitsComponent } from './components/cards/card-page-visits/card-page-visits.component';
 import { CardSocialTrafficComponent } from './components/cards/card-social-traffic/card-social-traffic.component';
 import { SideBarComponent } from './components/side-bar/side-bar.component';
-import { BrowserModule } from '@angular/platform-browser';
 import { UserDropDownComponent } from './components/dropdowns/user-drop-down/user-drop-down.component';
 import { FooterAdminComponent } from './components/footer-admin/footer-admin.component';
 import { HeaderStatusComponent } from './components/header-status/header-status.component';
-import { ReactiveFormsModule } from '@angular/forms';
 import { IndexComponent } from './components/index/index.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 
-const components = [
-  CardStatusComponent,
-  NavBarComponent,
-  CardBarChartComponent,
-  CardLineChartComponent,
-  CardPageVisitsComponent,
-  CardSocialTrafficComponent,
-  SideBarComponent,
-  UserDropDownComponent,
-  FooterAdminComponent,
-  HeaderStatusComponent,
-];
 
-@NgModule({
-  declarations: [...components, IndexComponent, DashboardComponent],
-  exports: [...components],
+@NgModule({ 
+  declarations: [
+    CardStatusComponent,
+    NavBarComponent,
+    CardBarChartComponent,
+    CardLineChartComponent,
+    CardPageVisitsComponent,
+    CardSocialTrafficComponent,
+    SideBarComponent,
+    UserDropDownComponent,
+    FooterAdminComponent,
+    HeaderStatusComponent,
+    IndexComponent, 
+    DashboardComponent],
   imports: [
+    DashboardRoutingModule,
+    DashboardRoutingModule,
     CommonModule,
-    DashboardRoutingModule,
-    BrowserModule,
-    ReactiveFormsModule,
-    DashboardRoutingModule,
   ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+
 })
 export class DashboardModule {}

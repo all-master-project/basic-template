@@ -8,10 +8,11 @@ import { BrowserModule } from '@angular/platform-browser';
 @NgModule({
   declarations: [],
   imports: [
-    BrowserModule,
     CommonModule,
     DashboardModule,
     AdminHomeRoutingModule,
   ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+
 })
 export class AdminHomeModule {}

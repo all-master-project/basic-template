@@ -1,21 +1,14 @@
-import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './components/home/home.component';
+import { LandingComponent } from './components/landing/landing.component';
 
 const routes: Routes = [
-  {
-    path: 'home',
-    component: HomeComponent,
-    // children: [
-    //   {path:"", }
-    // ],
-  },
-];
+  { path: "", component: LandingComponent },
+ ];
 
 @NgModule({
-  imports: [BrowserModule, CommonModule, RouterModule.forChild(routes)],
-  exports: [RouterModule],
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule]
 })
-export class HomeRoutingModule {}
+export class HomeRoutingModule { }
+ 

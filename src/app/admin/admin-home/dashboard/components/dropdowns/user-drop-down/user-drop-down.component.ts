@@ -2,9 +2,8 @@ import { Component, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
 import { createPopper } from '@popperjs/core';
 
 @Component({
-  selector: 'cms-user-drop-down',
+  selector: 'app-user-drop-down',
   templateUrl: './user-drop-down.component.html',
-  styleUrls: ['./user-drop-down.component.css'],
 })
 export class UserDropDownComponent implements AfterViewInit {
   dropdownPopoverShow = false;

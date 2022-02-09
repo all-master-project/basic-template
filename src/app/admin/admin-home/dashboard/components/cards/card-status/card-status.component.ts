@@ -1,9 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'cms-card-status',
+  selector: 'app-card-status',
   templateUrl: './card-status.component.html',
-  styleUrls: ['./card-status.component.css'],
 })
 export class CardStatusComponent implements OnInit {
   @Input()

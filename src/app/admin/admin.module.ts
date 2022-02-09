@@ -6,7 +6,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 @NgModule({
   declarations: [],
-  imports: [CommonModule, AdminRoutingModule, BrowserModule],
+  imports: [CommonModule, AdminRoutingModule ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class AdminModule {}
