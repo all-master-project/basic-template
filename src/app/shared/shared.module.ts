@@ -6,16 +6,27 @@ import { PagesDropdownComponent } from './components/pages-dropdown/pages-dropdo
 import { TablesComponent } from './components/tables/tables.component';
 import { CardTableComponent } from './components/card-table/card-table.component';
 import { TableDropdownComponent } from './components/table-dropdown/table-dropdown.component';
+import { HttpClientModule } from '@angular/common/http';
+import { MaterialModule } from '../material/material.module';
 
 
 
 @NgModule({
-  declarations: [AuthNavbarComponent,PagesDropdownComponent, TablesComponent, CardTableComponent,TableDropdownComponent],
+  declarations: [AuthNavbarComponent,
+    PagesDropdownComponent, TablesComponent, CardTableComponent,TableDropdownComponent],
   imports: [
     CommonModule,
     RouterModule, 
 
   ],
-  exports: [AuthNavbarComponent, PagesDropdownComponent, TablesComponent, CardTableComponent,TableDropdownComponent]
+  exports: [
+     AuthNavbarComponent,
+     PagesDropdownComponent,
+     TablesComponent,
+     CardTableComponent,
+    TableDropdownComponent,
+     HttpClientModule,
+    MaterialModule
+  ]
 })
 export class SharedModule { }

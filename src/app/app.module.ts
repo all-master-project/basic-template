@@ -9,6 +9,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthModule } from './auth/auth.module';
 import { HomeAuthComponent } from './auth/components/home-auth/home-auth.component';
+import { MaterialModule } from './material/material.module';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -20,7 +22,8 @@ import { HomeAuthComponent } from './auth/components/home-auth/home-auth.compone
     AdminModule,
     DashboardModule,
     AuthModule,
-
+    MaterialModule,
+    SharedModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],

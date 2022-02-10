@@ -12,7 +12,7 @@ const routes: Routes = [
     children: [
       { path: '', component: DashboardComponent },
       {
-        path: "etudiant", 
+        path: "etudiant-list", 
         loadChildren:()=> import('../../core/etudiant/etudiant.module').then((m)=>m.EtudiantModule)
       },
       {

@@ -1,11 +1,7 @@
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { MatTableDataSource } from "@angular/material/table";
-// import { ToastrService } from "ngx-toastr";
-import { map } from 'rxjs/operators';
-import 'rxjs/Rx';
 import { Observable, throwError } from "rxjs";
-import 'rxjs/add/operator/map';
 import { environment } from "src/environments/environment";
 import { Promotion } from "../models/promotion.model";
 
@@ -13,25 +9,29 @@ import { Promotion } from "../models/promotion.model";
   providedIn: "root",
 })
 export class PromotionService {
+  httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json',
+    'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJCcmFoaW0iLCJyb2xlcyI6WyJST0xFX1VTRVIiXSwiZXhwIjoxNjQ0ODYxMDk0fQ.cdAkbXgzTyqxtPzhNa4Q2Y03377sAoONL8hwTZ9VIJxqTl2aji98dXpKJDg9wLBtadw7EoeFoR4xcSNv9d2f0w' })
+  };
   promotions: Array<Promotion> = [];
-  dataSource: MatTableDataSource<Promotion> =
-    new MatTableDataSource<Promotion>();
+  // dataSource: MatTableDataSource<Promotion> =
+  //   new MatTableDataSource<Promotion>();
   API=environment.url ;
   PROMOTION_API = environment.url + "/promotions";
   constructor(
-    private httpClient: HttpClient,
+    private httpClient: HttpClient, 
     // private paramsService: ParamsService,
     // private toastr: ToastrService
   ) {}
 
   getAllPromotions() {
     return this.httpClient
-      .get<Promotion>(this.PROMOTION_API + "/findAll")
+      .get<Promotion>(this.PROMOTION_API + "/findAll", this.httpOptions)
       .subscribe((res: any) => {
         this.promotions = res as Promotion[];
-        this.dataSource.data = res as Promotion[];
+        // this.dataSource.data = res as Promotion[];
         console.log("promotions: ", this.promotions);
-        console.log("dataSource: ", this.dataSource);
+        // console.log("dataSource: ", this.dataSource);
       });
   }
   deletePromotion(id:number) {
@@ -52,15 +52,20 @@ export class PromotionService {
         formData,
         httpOptions
       )
-      .map((data:any) => {
-        console.log("DATA: " + JSON.stringify(data));
+      .subscribe((data:any)=>{
+        console.log("data:[ "+" ]");
+        
         return data;
       });
+      // map<Response>((data:Response) => {
+      //   console.log("DATA: " + JSON.stringify(data));
+      //   return data;
+      // });
   }
 
   deleteProfessseur(id: number) {
     return this.httpClient.delete(
-      this.paramsService.getUrl() + "/promotions/delete?id=" + id
+      this.API + "/promotions/delete?id=" + id
     );
   }
 
@@ -72,13 +77,13 @@ export class PromotionService {
     };
     console.log("Form Value: " + JSON.stringify(formData));
     return this.httpClient.put(
-      this.paramsService.getUrl() + "/promotions/update",
+      this.API + "/promotions/update",
       formData,
       httpOptions
     );
   }
 
-  handleErprror(err): Observable<never> {
+  handleErprror(err:any): Observable<never> {
     // in a real world app, we may send the server to some remote logging infrastructure
     // instead of just logging it to the console
     let errorMessage: string;
@@ -91,6 +96,6 @@ export class PromotionService {
       errorMessage = `Backend returned code ${err.status}: ${err.body.error}`;
     }
     console.error(err);
-    return throwError(errorMessage);
+    return throwError(errorMessage); 
   }
 }
