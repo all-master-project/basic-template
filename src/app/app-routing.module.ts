@@ -13,10 +13,12 @@ const routes: Routes = [
     import(`./auth/auth.module`).then((m) => m.AuthModule),
   },
   { 
-    path: '',
+    path: 'home',
   loadChildren: () =>
     import(`./home/home.module`).then((m) => m.HomeModule),
-  }
+  },
+  { path: "**", redirectTo: "home", pathMatch: "full" },
+
 ];
 
 @NgModule({

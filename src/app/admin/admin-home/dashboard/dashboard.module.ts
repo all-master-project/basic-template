@@ -14,6 +14,7 @@ import { FooterAdminComponent } from './components/footer-admin/footer-admin.com
 import { HeaderStatusComponent } from './components/header-status/header-status.component';
 import { IndexComponent } from './components/index/index.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 
 @NgModule({ 
@@ -32,8 +33,8 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     DashboardComponent],
   imports: [
     DashboardRoutingModule,
-    DashboardRoutingModule,
     CommonModule,
+    SharedModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 
